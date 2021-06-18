@@ -17,10 +17,12 @@ void printString(String str) => print(str);
 void main() {
   StringProvider provider = RandomStringProvider();
 
-  if (provider.value == null) {
+  final str = provider.value;
+
+  if (str == null) {
     print('The value is null.');
     return;
   }
 
-  printString(provider.value);
+  printString(str);
 }
