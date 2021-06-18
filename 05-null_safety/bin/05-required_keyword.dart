@@ -1,7 +1,7 @@
 int addThreeValues({
   required int first,
   required int second,
-  required int third,
+  int third = 0,
 }) {
   return first + second + third;
 }
