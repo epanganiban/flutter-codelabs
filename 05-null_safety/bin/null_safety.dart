@@ -1,5 +1,5 @@
 void main(List<String> arguments) {
   int a;
-  a = null;
+  a = 3;
   print('a is $a.');
 }
