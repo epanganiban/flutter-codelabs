@@ -1,5 +1,5 @@
 class Meal {
-  String _description;
+  late String _description;
 
   set description(String desc) {
     _description = 'Meal description: $desc';
