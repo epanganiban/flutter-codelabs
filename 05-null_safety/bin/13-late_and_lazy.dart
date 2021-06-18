@@ -4,7 +4,7 @@ int _computeValue() {
 }
 
 class CachedValueProvider {
-  final _cache = _computeValue();
+  late final _cache = _computeValue();
   int get value => _cache;
 }
 
