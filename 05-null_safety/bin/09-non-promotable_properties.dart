@@ -9,10 +9,12 @@ void printString(String str) => print(str);
 void main() {
   final provider = RandomStringProvider();
 
-  if (provider.value == null) {
+  final str = provider.value;
+
+  if (str == null) {
     print('The value is null.');
   } else {
     print('The value is not null, so we print it');
-    printString(provider.value);
+    printString(str);
   }
 }
