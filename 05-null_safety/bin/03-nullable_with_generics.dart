@@ -1,7 +1,7 @@
 void main() {
-  List<String> aListOfStrings = ['one', 'two', 'three'];
-  List<String> aNullableListOfStrings;
-  List<String> aListOfNullableStrings = ['one', null, 'three'];
+  var aListOfStrings = ['one', 'two', 'three'];
+  List<String>? aNullableListOfStrings;
+  var aListOfNullableStrings = ['one', null, 'three'];
 
   print('aListOfStrings is $aListOfStrings.');
   print('aNullableListOfStrings is $aNullableListOfStrings.');
