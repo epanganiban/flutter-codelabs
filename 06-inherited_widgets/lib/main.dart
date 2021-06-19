@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 final GlobalKey<ShoppingCartIconState> shoppingCart =
     GlobalKey<ShoppingCartIconState>();
@@ -19,6 +20,7 @@ class AppState {
     required this.productList,
     this.itemsInCart = const <String>{},
   });
+
   final List<String> productList;
   final Set<String> itemsInCart;
 
@@ -30,6 +32,19 @@ class AppState {
       productList: productList ?? this.productList,
       itemsInCart: itemsInCart ?? this.itemsInCart,
     );
+  }
+}
+
+class AppStateScope extends InheritedWidget {
+  // TODO: implement this class.
+
+  static AppState of(BuildContext context) {
+    // TODO: implement this method.
+  }
+
+  @override
+  bool updateShouldNotify(AppStateScope oldWidget) {
+    // TODO: implement this method.
   }
 }
 
