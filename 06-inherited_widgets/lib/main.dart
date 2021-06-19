@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
+// TODO: remove the usage of productList Globalkey.
 final GlobalKey<ProductListWidgetState> productList =
     GlobalKey<ProductListWidgetState>();
 
@@ -208,6 +209,7 @@ class ShoppingCartIcon extends StatelessWidget {
   }
 }
 
+// TODO: convert ProductListWidget into StatelessWidget.
 class ProductListWidget extends StatefulWidget {
   ProductListWidget({Key? key}) : super(key: key);
   @override
