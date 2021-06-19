@@ -124,13 +124,14 @@ class MyStorePageState extends State<MyStorePage> {
     });
 
     _controller.clear();
-    // TODO: set productList to Server.getProductList().
+    AppStateWidget.of(context).setProductList(Server.getProductList());
   }
 
   void _handleSearch() {
     _focusNode.unfocus();
     final String filter = _controller.text;
-    // TODO: set productList to Server.getProductList(filter: filter).
+    AppStateWidget.of(context)
+        .setProductList(Server.getProductList(filter: filter));
   }
 
   @override
