@@ -15,12 +15,21 @@ void main() {
 }
 
 class AppState {
-  // TODO: fill in this data structure.
+  AppState({
+    required this.productList,
+    this.itemsInCart = const <String>{},
+  });
+  final List<String> productList;
+  final Set<String> itemsInCart;
 
   AppState copyWith({
-    //..
+    List<String>? productList,
+    Set<String>? itemsInCart,
   }) {
-    // TODO: implement copy method
+    return AppState(
+      productList: productList ?? this.productList,
+      itemsInCart: itemsInCart ?? this.itemsInCart,
+    );
   }
 }
 
