@@ -56,8 +56,9 @@ class AppStateWidget extends StatefulWidget {
   final Widget child;
 
   static AppStateWidgetState of(BuildContext context) {
-    // TODO: implement this method
+    return context.findAncestorStateOfType<AppStateWidgetState>()!;
   }
+
   @override
   AppStateWidgetState createState() => AppStateWidgetState();
 }
@@ -68,20 +69,36 @@ class AppStateWidgetState extends State<AppStateWidget> {
   );
 
   void setProductList(List<String> newProductList) {
-    // TODO: implement this method
+    if (_data.productList != newProductList) {
+      setState(() {
+        _data = _data.copyWith(productList: newProductList);
+      });
+    }
   }
 
   void addToCart(String id) {
-    // TODO: implement this method
+    if (!_data.itemsInCart.contains(id)) {
+      setState(() {
+        final Set<String> newItemsInCart = Set<String>.from(_data.itemsInCart);
+        newItemsInCart.add(id);
+        _data = _data.copyWith(itemsInCart: newItemsInCart);
+      });
+    }
   }
 
   void removeFromCart(String id) {
-    // TODO: implement this method
+    if (_data.itemsInCart.contains(id)) {
+      setState(() {
+        final Set<String> newItemsInCart = Set<String>.from(_data.itemsInCart);
+        newItemsInCart.remove(id);
+        _data = _data.copyWith(itemsInCart: newItemsInCart);
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement this method
+    return AppStateScope(_data, child: widget.child);
   }
 }
 
