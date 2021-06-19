@@ -50,6 +50,41 @@ class AppStateScope extends InheritedWidget {
   }
 }
 
+class AppStateWidget extends StatefulWidget {
+  AppStateWidget({required this.child});
+
+  final Widget child;
+
+  static AppStateWidgetState of(BuildContext context) {
+    // TODO: implement this method
+  }
+  @override
+  AppStateWidgetState createState() => AppStateWidgetState();
+}
+
+class AppStateWidgetState extends State<AppStateWidget> {
+  AppState _data = AppState(
+    productList: Server.getProductList(),
+  );
+
+  void setProductList(List<String> newProductList) {
+    // TODO: implement this method
+  }
+
+  void addToCart(String id) {
+    // TODO: implement this method
+  }
+
+  void removeFromCart(String id) {
+    // TODO: implement this method
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement this method
+  }
+}
+
 class MyStorePage extends StatefulWidget {
   MyStorePage({Key? key}) : super(key: key);
   @override
