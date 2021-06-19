@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
+// TODO: insert AppStateWidget above MaterialApp.
 final GlobalKey<ShoppingCartIconState> shoppingCart =
     GlobalKey<ShoppingCartIconState>();
 final GlobalKey<ProductListWidgetState> productList =
@@ -178,6 +179,7 @@ class ShoppingCartIcon extends StatefulWidget {
   ShoppingCartIconState createState() => ShoppingCartIconState();
 }
 
+// TODO: convert ShoppingCartIcon into StatelessWidget.
 class ShoppingCartIconState extends State<ShoppingCartIcon> {
   Set<String> get itemsInCart => _itemsInCart;
   Set<String> _itemsInCart = <String>{};
