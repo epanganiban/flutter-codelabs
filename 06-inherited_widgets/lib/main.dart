@@ -36,15 +36,17 @@ class AppState {
 }
 
 class AppStateScope extends InheritedWidget {
-  // TODO: implement this class.
+  AppStateScope(this.data, {Key? key, required Widget child})
+      : super(key: key, child: child);
+  final AppState data;
 
   static AppState of(BuildContext context) {
-    // TODO: implement this method.
+    return context.dependOnInheritedWidgetOfExactType<AppStateScope>()!.data;
   }
 
   @override
   bool updateShouldNotify(AppStateScope oldWidget) {
-    // TODO: implement this method.
+    return data == oldWidget.data;
   }
 }
 
