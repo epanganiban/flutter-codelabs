@@ -56,17 +56,14 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             SizedBox(height: 120.0),
-            // TODO: Wrap Username with AccentColorOverride (103)
-            // TODO: Remove filled: true values (103)
-            // TODO: Wrap Password with AccentColorOverride (103)
-
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(
                 labelText: 'Username',
                 labelStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
-                ),
+                    color: _usernameFocusNode.hasFocus
+                        ? Theme.of(context).colorScheme.secondary
+                        : _unfocusedColor),
               ),
               focusNode: _usernameFocusNode,
             ),
@@ -76,8 +73,9 @@ class _LoginPageState extends State<LoginPage> {
               decoration: InputDecoration(
                 labelText: 'Password',
                 labelStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
-                ),
+                    color: _passwordFocusNode.hasFocus
+                        ? Theme.of(context).colorScheme.secondary
+                        : _unfocusedColor),
               ),
               focusNode: _passwordFocusNode,
               obscureText: true,
@@ -121,5 +119,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-// TODO: Add AccentColorOverride (103)
