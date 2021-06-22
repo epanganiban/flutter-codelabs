@@ -51,8 +51,12 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               decoration: InputDecoration(filled: true, labelText: 'Password'),
             ),
-
-            // TODO: Add button bar (101)
+            ButtonBar(
+              children: <Widget>[
+                TextButton(onPressed: () {}, child: Text('CANCEL')),
+                ElevatedButton(onPressed: () {}, child: Text('NEXT'))
+              ],
+            ),
           ],
         ),
       ),
