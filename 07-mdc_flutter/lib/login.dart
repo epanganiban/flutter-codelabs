@@ -22,6 +22,21 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _unfocusedColor = Colors.grey[600];
+  final _usernameFocusNode = FocusNode();
+  final _passwordFocusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    _usernameFocusNode.addListener(() {
+      setState(() {});
+    });
+    _passwordFocusNode.addListener(() {
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
+              focusNode: _usernameFocusNode,
             ),
             SizedBox(height: 12.0),
             TextField(
@@ -63,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
+              focusNode: _passwordFocusNode,
               obscureText: true,
             ),
             ButtonBar(
