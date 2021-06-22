@@ -62,7 +62,11 @@ class _LoginPageState extends State<LoginPage> {
                       _passwordController.clear();
                     },
                     child: Text('CANCEL')),
-                ElevatedButton(onPressed: () {}, child: Text('NEXT'))
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text('NEXT'))
               ],
             ),
           ],
