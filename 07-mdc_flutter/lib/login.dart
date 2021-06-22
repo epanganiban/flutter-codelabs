@@ -91,10 +91,18 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     child: Text('CANCEL')),
                 ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text('NEXT'))
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('NEXT'),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                      BeveledRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ],
